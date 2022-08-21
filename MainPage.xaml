@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AiPODMA.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="10"
+            Padding="0,0"
+            VerticalOptions="Center"
+            >
+            <Image
+                Source="dotnet_bot.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center"
+                />
+            <Label
+                Text="Hello, World!"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center"
+                />
+            <Label
+                Text="Welcome to A.i.POD.NET Multi-platform App"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                FontSize="18"
+                HorizontalOptions="Center"
+                />
+            <Button
+                x:Name="CounterBtn"
+                HeightRequest="42"
+                WidthRequest="240"
+                TextColor="White"
+                Text="Load an image!"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Center" 
+                BackgroundColor="Black"
+                />
+            <DatePicker x:Name="DatePck"
+                        DateSelected="DatePck_DateChanged"
+                        HeightRequest="42"
+                        HorizontalOptions="Center"
+                        WidthRequest="240"
+                        />
+            <CheckBox x:Name="AutoLoadImageCheckBox"
+                      HeightRequest="33"
+                      WidthRequest="33"                      
+                      />
+            <BoxView x:Name="ImagesTodayTextBox"
+                     BindingContext=""
+                     Color="DimGray"
+                     HeightRequest="37"
+                     HorizontalOptions="Center"
+                     WidthRequest="240"
+                     />
+            <BoxView x:Name="ImageCopyrightTextBox"
+                     BindingContext="Copyright ©"
+                     Color="DimGray"
+                     HeightRequest="70"
+                     HorizontalOptions="Center"
+                     WidthRequest="240"                     
+                     />
+            <Button x:Name="DescriptionTextBox"
+                    BackgroundColor="Black"
+                    HeightRequest="140"
+                    HorizontalOptions="Center"
+                    Text="Scene Description Text Box"
+                    TextColor="White"
+                    WidthRequest="240"
+                    />
+            <Image x:Name="ImagePictureBox"
+                   BackgroundColor="Black"
+                   HeightRequest="930"
+                   HorizontalOptions="Fill"
+                   IsVisible="false"
+                   Margin="10,0,10,0"
+                   WidthRequest="930"
+                   />
+            <WebView x:Name="WebView1"
+                     BackgroundColor="Black"
+                     HeightRequest="930"
+                     HorizontalOptions="Fill"
+                     IsVisible="false"
+                     Margin="10,0,10,0"
+                     WidthRequest="930"
+                     />
+            <Image x:Name="ImageIcon"
+                   BackgroundColor="Black"
+                   HeightRequest="133"
+                   IsVisible="true"
+                   Source="largetile.png"
+                   WidthRequest="133"
+                   />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
