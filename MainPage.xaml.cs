@@ -118,7 +118,7 @@ public partial class MainPage : ContentPage
                     // Populate the description text box.
                     DescriptionTextBox.BindingContext = description;
                     // Switch the visibility back
-                    await Task.Delay(TimeSpan.FromSeconds(1.3f));
+                    await Task.Delay(TimeSpan.FromSeconds(3.3f));
                     WebView1.IsVisible = false;
                     ImagePictureBox.IsVisible = true;
                 }
@@ -128,7 +128,7 @@ public partial class MainPage : ContentPage
                     //WebView1.Navigate(new Uri(photoUrl));
                     ImageCopyrightTextBox.BindingContext = "© " + copyright;
                     DescriptionTextBox.BindingContext = description + $"Url is: {photoUrl}";
-                    await Task.Delay(TimeSpan.FromSeconds(1.3f));
+                    await Task.Delay(TimeSpan.FromSeconds(3.3f));
                     ImagePictureBox.IsVisible = false;
                     WebView1.IsVisible = true;
                 }
