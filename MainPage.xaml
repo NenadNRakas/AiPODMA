@@ -45,22 +45,28 @@
                         HorizontalOptions="Center"
                         WidthRequest="240"
                         />
-            <CheckBox x:Name="AutoLoadImageCheckBox"
-                      HeightRequest="33"
-                      WidthRequest="33"                      
-                      />
-            <BoxView x:Name="ImagesTodayTextBox"
-                     BindingContext=""
-                     Color="DimGray"
-                     HeightRequest="37"
-                     HorizontalOptions="Center"
-                     WidthRequest="240"
-                     />
-            <BoxView x:Name="ImageCopyrightTextBox"
-                     BindingContext="Copyright ©"
-                     Color="DimGray"
+            <HorizontalStackLayout x:Name="LayoutCheckBox" 
+                                   HorizontalOptions="Center"
+                                   >                
+                                   <CheckBox x:Name="AutoLoadImageCheckBox"
+                                             HeightRequest="33"
+                                             WidthRequest="33"                      
+                                             />
+            </HorizontalStackLayout>
+            <Button x:Name="ImagesTodayTextBox"
+                     BackgroundColor="Black"
                      HeightRequest="70"
                      HorizontalOptions="Center"
+                     Text="Your image Downlods"
+                     TextColor="White"
+                     WidthRequest="240"
+                     />
+            <Button x:Name="ImageCopyrightTextBox"
+                     BackgroundColor="Black"
+                     HeightRequest="70"
+                     HorizontalOptions="Center"
+                     Text="Copyright ©"
+                     TextColor="White"
                      WidthRequest="240"                     
                      />
             <Button x:Name="DescriptionTextBox"
