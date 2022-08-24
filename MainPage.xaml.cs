@@ -78,8 +78,8 @@ public partial class MainPage : ContentPage
         string photoUrl = null;
         string copyright = null;
         // Set the UI elements to defaults
-        ImageCopyrightTextBox.BindingContext = "© " + "NASA";
-        DescriptionTextBox.BindingContext = " ";
+        ImageCopyrightTextBox.Text = "© " + "NASA";
+        DescriptionTextBox.Text = " ";
         // Build the date parameter string for the date selected, or the last date if a range is specified.
         DateTimeOffset dt = (DateTimeOffset)DatePck.Date;
         string dateSelected = $"{dt.Year.ToString()}-{dt.Month.ToString("00")}-{dt.Day.ToString("00")}";
@@ -113,10 +113,10 @@ public partial class MainPage : ContentPage
                     //copyright = (string)jResult["copyright"];
                     if (copyright != null && copyright.Length > 0)
                     {
-                        ImageCopyrightTextBox.BindingContext = "© " + copyright;
+                        ImageCopyrightTextBox.Text = "© " + copyright;
                     }
                     // Populate the description text box.
-                    DescriptionTextBox.BindingContext = description;
+                    DescriptionTextBox.Text = description;
                     // Switch the visibility back
                     await Task.Delay(TimeSpan.FromSeconds(3.3f));
                     WebView1.IsVisible = false;
@@ -126,8 +126,8 @@ public partial class MainPage : ContentPage
                 {
                     WebView1.Source = (new Uri(photoUrl, UriKind.Absolute));
                     //WebView1.Navigate(new Uri(photoUrl));
-                    ImageCopyrightTextBox.BindingContext = "© " + copyright;
-                    DescriptionTextBox.BindingContext = description + $"Url is: {photoUrl}";
+                    ImageCopyrightTextBox.Text = "© " + copyright;
+                    DescriptionTextBox.Text = description + $"Url is: {photoUrl}";
                     await Task.Delay(TimeSpan.FromSeconds(3.3f));
                     ImagePictureBox.IsVisible = false;
                     WebView1.IsVisible = true;
@@ -141,17 +141,17 @@ public partial class MainPage : ContentPage
                 //WebView1.Navigate(new Uri(photoUrl));
                 if (copyright != null && copyright.Length > 0)
                 {
-                    ImageCopyrightTextBox.BindingContext = "© " + copyright;
+                    ImageCopyrightTextBox.Text = "© " + copyright;
                 }
-                DescriptionTextBox.BindingContext = description + $" Msg: {ex.Message}";
+                DescriptionTextBox.Text = description + $" Msg: {ex.Message}";
             }
             // Keep track of our downloads, in case we reach the limit.
             ++imageCountToday;
-            ImagesTodayTextBox.BindingContext = imageCountToday.ToString();
+            ImagesTodayTextBox.Text = imageCountToday.ToString();
         }
         else
         {
-            DescriptionTextBox.BindingContext = "We were unable to retrieve the NASA picture for that day: " +
+            DescriptionTextBox.Text = "We were unable to retrieve the NASA picture for that day: " +
                 $"{response.StatusCode.ToString()} {response.ReasonPhrase}";
         }
         //SetupForTimelineAsync();
