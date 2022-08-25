@@ -1,7 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
 using System.Net.Http.Headers;
 namespace AiPODMA;
-
 public partial class MainPage : ContentPage
 {
     internal class BitmapImage
@@ -12,7 +11,7 @@ public partial class MainPage : ContentPage
             this.photoURI = photoURI;
         }
     }
-	int count = 0;
+    int count = 0;
     const string SettingDateToday = "date today";
     const string SettingShowOnStartup = "show on startup";
     const string SettingImageCountToday = "image count today";
@@ -32,28 +31,26 @@ public partial class MainPage : ContentPage
     // To support the Timeline, we need to record user activity, and create an Adaptive Card.
     //UserActivitySession _currentActivity;
     //AdaptiveCard apodTimelineCard;
-
     public MainPage()
-	{
+    {
         InitializeComponent();
-	}
+    }
+    private void OnCounterClicked(object sender, EventArgs e)
+    {
+        count++;
 
-	private void OnCounterClicked(object sender, EventArgs e)
-	{
-		count++;
+        if (count == 1)
+            CounterBtn.Text = $"Loaded {count} image!";
+        else
+            CounterBtn.Text = $"Loaded {count} images!";
 
-		if (count == 1)
-			CounterBtn.Text = $"Loaded {count} image!";
-		else
-			CounterBtn.Text = $"Loaded {count} images!";
-
-		SemanticScreenReader.Announce(CounterBtn.Text);
-	}
-	private void DatePck_DateChanged(object sender, EventArgs e)
-	{
+        SemanticScreenReader.Announce(CounterBtn.Text);
+    }
+    private void DatePck_DateChanged(object sender, EventArgs e)
+    {
         _ = LoadPhoto();
         //ImagePictureBox.IsVisible = true;
-	}
+    }
     private void AutoLoadImageCheckBox_OnChecked(object sender, EventArgs args)
     {
         AutoLoadImageCheckBox.IsChecked = true;
@@ -79,7 +76,7 @@ public partial class MainPage : ContentPage
         string copyright = null;
         // Set the UI elements to defaults
         ImageCopyrightTextBox.Text = "© " + "NASA";
-        DescriptionTextBox.Text = " ";
+        DescriptionLabel.Text = " ";
         // Build the date parameter string for the date selected, or the last date if a range is specified.
         DateTimeOffset dt = (DateTimeOffset)DatePck.Date;
         string dateSelected = $"{dt.Year.ToString()}-{dt.Month.ToString("00")}-{dt.Day.ToString("00")}";
@@ -116,7 +113,7 @@ public partial class MainPage : ContentPage
                         ImageCopyrightTextBox.Text = "© " + copyright;
                     }
                     // Populate the description text box.
-                    DescriptionTextBox.Text = description;
+                    DescriptionLabel.Text = description;
                     // Switch the visibility back
                     await Task.Delay(TimeSpan.FromSeconds(3.3f));
                     WebView1.IsVisible = false;
@@ -127,7 +124,7 @@ public partial class MainPage : ContentPage
                     WebView1.Source = (new Uri(photoUrl, UriKind.Absolute));
                     //WebView1.Navigate(new Uri(photoUrl));
                     ImageCopyrightTextBox.Text = "© " + copyright;
-                    DescriptionTextBox.Text = description + $"Url is: {photoUrl}";
+                    DescriptionLabel.Text = description + $"Url is: {photoUrl}";
                     await Task.Delay(TimeSpan.FromSeconds(3.3f));
                     ImagePictureBox.IsVisible = false;
                     WebView1.IsVisible = true;
@@ -143,7 +140,7 @@ public partial class MainPage : ContentPage
                 {
                     ImageCopyrightTextBox.Text = "© " + copyright;
                 }
-                DescriptionTextBox.Text = description + $" Msg: {ex.Message}";
+                DescriptionLabel.Text = description + $" Msg: {ex.Message}";
             }
             // Keep track of our downloads, in case we reach the limit.
             ++imageCountToday;
@@ -151,7 +148,7 @@ public partial class MainPage : ContentPage
         }
         else
         {
-            DescriptionTextBox.Text = "We were unable to retrieve the NASA picture for that day: " +
+            DescriptionLabel.Text = "We were unable to retrieve the NASA picture for that day: " +
                 $"{response.StatusCode.ToString()} {response.ReasonPhrase}";
         }
         //SetupForTimelineAsync();

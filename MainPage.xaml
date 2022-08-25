@@ -9,74 +9,107 @@
             Padding="0,0"
             VerticalOptions="Center"
             >
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center"
-                />
-            <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center"
-                />
-            <Label
-                Text="Welcome to A.i.POD.NET Multi-platform App"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center"
-                />
-            <Button
-                x:Name="CounterBtn"
-                HeightRequest="42"
-                WidthRequest="240"
-                TextColor="White"
-                Text="Load an image!"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" 
-                BackgroundColor="Black"
-                />
-            <DatePicker x:Name="DatePck"
-                        DateSelected="DatePck_DateChanged"
+            <Image Source="dotnet_bot.png"
+                   SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                   HeightRequest="200"
+                   HorizontalOptions="Center"
+            />
+            <Label Text="Hello, World!"
+                   SemanticProperties.HeadingLevel="Level1"
+                   FontSize="32"
+                   HorizontalOptions="Center"
+            />
+            <Label Text="Welcome to A.i.POD.NET Multi-platform App"
+                   SemanticProperties.HeadingLevel="Level2"
+                   SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                   FontSize="18"
+                   HorizontalOptions="Center"
+            />
+            <Border  Stroke="#C49B33"
+                     StrokeThickness="3"
+                     Background="#2B0B98"
+                     Padding="13,13"
+                     HorizontalOptions="Center"
+                     >
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="40,0,0,40"/>
+                </Border.StrokeShape>
+                <Button x:Name="CounterBtn"
+                        BackgroundColor="Black"
+                        Clicked="OnCounterClicked"
+                        HorizontalOptions="Center" 
                         HeightRequest="42"
-                        HorizontalOptions="Center"
-                        WidthRequest="240"
-                        />
+                        Text="Load an image!"
+                        TextColor="White"
+                        SemanticProperties.Hint="Counts the number of times you click"
+                        WidthRequest="227"
+                />
+            </Border>
+            <Border  Stroke="#C49B33"
+                     StrokeThickness="3"
+                     Background="#2B0B98"
+                     Padding="3,3"
+                     HorizontalOptions="Center"
+                     >
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10,0,0,10"/>
+                </Border.StrokeShape>
+                <DatePicker x:Name="DatePck"
+                            DateSelected="DatePck_DateChanged"
+                            HeightRequest="42"
+                            HorizontalOptions="Center"
+                            WidthRequest="240"
+                />
+            </Border>
             <HorizontalStackLayout x:Name="LayoutCheckBox" 
                                    HorizontalOptions="Center"
-                                   >                
-                                   <CheckBox x:Name="AutoLoadImageCheckBox"
+                                   >
+                <CheckBox x:Name="AutoLoadImageCheckBox"
                                              HeightRequest="33"
                                              WidthRequest="33"                      
-                                             />
+                />
             </HorizontalStackLayout>
             <Button x:Name="ImagesTodayTextBox"
-                     BackgroundColor="Black"
+                     BackgroundColor="#2B0B98"
+                    BorderColor="#C49B33"
+                    BorderWidth="3"
                      HeightRequest="70"
                      HorizontalOptions="Center"
                      Text="Your image Downlods"
                      TextColor="White"
                      WidthRequest="240"
-                     />
+            />
             <Button x:Name="ImageCopyrightTextBox"
-                     BackgroundColor="Black"
-                     HeightRequest="70"
-                     HorizontalOptions="Center"
-                     Text="Copyright ©"
-                     TextColor="White"
-                     WidthRequest="240"                     
-                     />
-            <Button x:Name="DescriptionTextBox"
-                    BackgroundColor="Black"
-                    HeightRequest="140"
+                    BackgroundColor="#2B0B98"
+                    BorderColor="#C49B33"
+                    BorderWidth="3"
+                    HeightRequest="70"
                     HorizontalOptions="Center"
-                    Text="Scene Description Text Box"
+                    Text="Copyright ©"
                     TextColor="White"
-                    WidthRequest="240"
-                    />
+                    WidthRequest="240"                     
+            />
+            <Border  Stroke="#C49B33"
+                     StrokeThickness="3"
+                     Background="#2B0B98"
+                     Padding="16,8"
+                     HorizontalOptions="Center"
+                     >
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="40,40,40,40"/>
+                </Border.StrokeShape>
+                <Label x:Name="DescriptionLabel"  
+                       Padding="33"
+                       HorizontalOptions="Center"
+                       Text="Some text here hopefully multiline 
+                             text that we can keep going here for a
+                             very long time as long as we can keep 
+                             thinking of all this bogus to write he 
+                             so that we can test this miltiline text!" 
+                       HorizontalTextAlignment="Center"
+                       >
+                </Label>
+            </Border>
             <Image x:Name="ImagePictureBox"
                    BackgroundColor="Black"
                    HeightRequest="930"
