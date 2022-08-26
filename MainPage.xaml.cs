@@ -12,25 +12,35 @@ public partial class MainPage : ContentPage
         }
     }
     int count = 0;
+    // Settings name strings, used to preserve UI values between sessions.
+    const string SettingUpdateInstall = "1";
+    const string SettingSelectedDate = "2022, 06, 19";
     const string SettingDateToday = "date today";
     const string SettingShowOnStartup = "show on startup";
     const string SettingImageCountToday = "image count today";
     const string SettingLimitRange = "limit range";
-    // Declare a container for the local settings.
-    //ApplicationDataContainer localSettings;
     // The objective of the NASA API portal is to make NASA data, including imagery, eminently accessible to application developers. 
     const string EndpointURL = "https://api.nasa.gov/planetary/apod";
     // The objective of the NASA API portal is to make NASA data, including imagery, eminently accessible to application developers. 
     const string DesignerURL = "https://aicloudptyltd.business.site";
-    // June 16, 1995  : the APOD launch date.
-    DateTime launchDate = new DateTime(1995, 6, 16);
+    private const int imageDownloadLimit = 50;
     // A count of images downloaded today.
     private int imageCountToday;
     // Application settings status
-    //private string imageAutoLoad = "Yes";
-    // To support the Timeline, we need to record user activity, and create an Adaptive Card.
+    private string imageAutoLoad = "Yes";
+    // Selected date
+    private static string selectedDate;
+    Object todayObject;
+    // Declare a container for the local settings.
+    //ApplicationDataContainer localSettings;
+    // June 16, 1995  : the APOD launch date.
+    DateTime launchDate = new DateTime(1995, 6, 16);
     //UserActivitySession _currentActivity;
     //AdaptiveCard apodTimelineCard;
+    private static bool ImageLoaded = false;
+    private static bool UpdateInstalling = false;
+    private static bool UpdateInAMin = false;
+
     public MainPage()
     {
         InitializeComponent();

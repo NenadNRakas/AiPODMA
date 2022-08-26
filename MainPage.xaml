@@ -14,12 +14,12 @@
                    HeightRequest="200"
                    HorizontalOptions="Center"
             />
-            <Label Text="Hello, World!"
+            <Label Text="A.i.POD"
                    SemanticProperties.HeadingLevel="Level1"
                    FontSize="32"
                    HorizontalOptions="Center"
             />
-            <Label Text="Welcome to A.i.POD.NET Multi-platform App"
+            <Label Text="Welcome to our .NET Multi-platform App"
                    SemanticProperties.HeadingLevel="Level2"
                    SemanticProperties.Description="Welcome to dot net Multi platform App U I"
                    FontSize="18"
@@ -65,19 +65,23 @@
                                    HorizontalOptions="Center"
                                    >
                 <CheckBox x:Name="AutoLoadImageCheckBox"
-                                             HeightRequest="33"
-                                             WidthRequest="33"                      
+                          HeightRequest="33"
+                          WidthRequest="33"                      
+                />
+                <CheckBox x:Name="DateLimiteCheckBox"
+                          HeightRequest="33"
+                          WidthRequest="33"                      
                 />
             </HorizontalStackLayout>
             <Button x:Name="ImagesTodayTextBox"
-                     BackgroundColor="#2B0B98"
+                    BackgroundColor="#2B0B98"
                     BorderColor="#C49B33"
                     BorderWidth="3"
-                     HeightRequest="70"
-                     HorizontalOptions="Center"
-                     Text="Your image Downlods"
-                     TextColor="White"
-                     WidthRequest="240"
+                    HeightRequest="70"
+                    HorizontalOptions="Center"
+                    Text="Your image Downlods"
+                    TextColor="White"
+                    WidthRequest="240"
             />
             <Button x:Name="ImageCopyrightTextBox"
                     BackgroundColor="#2B0B98"
@@ -96,7 +100,7 @@
                      HorizontalOptions="Center"
                      >
                 <Border.StrokeShape>
-                    <RoundRectangle CornerRadius="40,40,40,40"/>
+                    <RoundRectangle CornerRadius="30,30,30,30"/>
                 </Border.StrokeShape>
                 <Label x:Name="DescriptionLabel"  
                        Padding="33"
