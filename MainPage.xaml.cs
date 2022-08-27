@@ -1,5 +1,17 @@
 ﻿using Newtonsoft.Json.Linq;
 using System.Net.Http.Headers;
+using System;
+using System.Threading;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Net.Http;
+using System.Runtime;
+using System.Runtime.Serialization;
+using System.Runtime.InteropServices;
+using System.Threading.Tasks;
+using System.Windows;
+using Microsoft.Maui.ApplicationModel;
 namespace AiPODMA;
 public partial class MainPage : ContentPage
 {
@@ -44,6 +56,10 @@ public partial class MainPage : ContentPage
     public MainPage()
     {
         InitializeComponent();
+        if (AutoLoadImageCheckBox.IsChecked == true)
+        {
+            _ = LoadPhoto();
+        }
     }
     private void OnCounterClicked(object sender, EventArgs e)
     {
@@ -63,11 +79,19 @@ public partial class MainPage : ContentPage
     }
     private void AutoLoadImageCheckBox_OnChecked(object sender, EventArgs args)
     {
-        AutoLoadImageCheckBox.IsChecked = true;
+        // T.B.D.
     }
-    private void AutoLoadImageChecked_OnUnchacked(object sender, EventArgs args)
+    private void LimitRangeCheckBox_OnChecked(object sender, EventArgs args)
     {
-        AutoLoadImageCheckBox.IsChecked = false;
+        if (DateLimiteCheckBox.IsChecked == true)
+        {
+            DateTime firstDayOfThisYear = new DateTime(DateTime.Today.Year, 1, 1);
+            DatePck.MinimumDate = firstDayOfThisYear;            
+        }
+        else
+        {
+            DatePck.MinimumDate = launchDate;
+        }
     }
     private bool IsSupportedFormat(string photoUrl)
     {
@@ -162,6 +186,11 @@ public partial class MainPage : ContentPage
                 $"{response.StatusCode.ToString()} {response.ReasonPhrase}";
         }
         //SetupForTimelineAsync();
+    }
+
+    private void AutoLoadImageCheckBox_CheckedChanged(object sender, CheckedChangedEventArgs e)
+    {
+
     }
 }
 

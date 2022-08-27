@@ -28,71 +28,110 @@
             <Border  Stroke="#C49B33"
                      StrokeThickness="3"
                      Background="#2B0B98"
-                     Padding="13,13"
+                     Padding="6,6"
                      HorizontalOptions="Center"
                      >
                 <Border.StrokeShape>
-                    <RoundRectangle CornerRadius="40,0,0,40"/>
+                    <RoundRectangle CornerRadius="11,0,0,11"/>
                 </Border.StrokeShape>
                 <Button x:Name="CounterBtn"
                         BackgroundColor="Black"
+                        CornerRadius="11"
                         Clicked="OnCounterClicked"
                         HorizontalOptions="Center" 
                         HeightRequest="42"
                         Text="Load an image!"
                         TextColor="White"
                         SemanticProperties.Hint="Counts the number of times you click"
-                        WidthRequest="227"
+                        WidthRequest="240"
                 />
             </Border>
             <Border  Stroke="#C49B33"
                      StrokeThickness="3"
                      Background="#2B0B98"
-                     Padding="3,3"
+                     Padding="6,6"
                      HorizontalOptions="Center"
                      >
                 <Border.StrokeShape>
-                    <RoundRectangle CornerRadius="10,0,0,10"/>
+                    <RoundRectangle CornerRadius="11,0,0,11"/>
                 </Border.StrokeShape>
-                <DatePicker x:Name="DatePck"
+                <DatePicker x:Name="DatePck"                            
+                            BackgroundColor="Black"
                             DateSelected="DatePck_DateChanged"
                             HeightRequest="42"
                             HorizontalOptions="Center"
+                            VerticalOptions="Center"
                             WidthRequest="240"
                 />
             </Border>
-            <HorizontalStackLayout x:Name="LayoutCheckBox" 
-                                   HorizontalOptions="Center"
-                                   >
+            <VerticalStackLayout x:Name="LayoutCheckBox" 
+                                 HorizontalOptions="Center"
+                                 >
+                <Label x:Name="AutoLoadLabel"
+                       HorizontalTextAlignment="Center"
+                       Text="Auto load images:"                       
+                       VerticalTextAlignment="Center"
+                       >                    
+                </Label>
                 <CheckBox x:Name="AutoLoadImageCheckBox"
+                          CheckedChanged="AutoLoadImageCheckBox_OnChecked"
                           HeightRequest="33"
+                          IsChecked="True"
                           WidthRequest="33"                      
                 />
+                <Label x:Name="LimitDate"
+                       HorizontalTextAlignment="Center"
+                       Text="Limit date to current year:"
+                       VerticalTextAlignment="Center"
+                       >                    
+                </Label>
                 <CheckBox x:Name="DateLimiteCheckBox"
+                          CheckedChanged="LimitRangeCheckBox_OnChecked"
                           HeightRequest="33"
+                          IsChecked="False"
                           WidthRequest="33"                      
                 />
-            </HorizontalStackLayout>
-            <Button x:Name="ImagesTodayTextBox"
-                    BackgroundColor="#2B0B98"
-                    BorderColor="#C49B33"
-                    BorderWidth="3"
-                    HeightRequest="70"
-                    HorizontalOptions="Center"
-                    Text="Your image Downlods"
-                    TextColor="White"
-                    WidthRequest="240"
+            </VerticalStackLayout>
+            <Border  Stroke="#C49B33"
+                     StrokeThickness="3"
+                     Background="#2B0B98"
+                     Padding="6,6"
+                     HorizontalOptions="Center"
+                     >
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="11,11,11,11"/>
+                </Border.StrokeShape>
+                <Button x:Name="ImagesTodayTextBox"
+                        BackgroundColor="Black"
+                        BorderColor="#C49B33"
+                        BorderWidth="3"
+                        HeightRequest="42"
+                        HorizontalOptions="Center"
+                        Text="Todays image Downloads"
+                        TextColor="White"
+                        WidthRequest="240"
             />
-            <Button x:Name="ImageCopyrightTextBox"
-                    BackgroundColor="#2B0B98"
+            </Border>
+            <Border  Stroke="#C49B33"
+                     StrokeThickness="3"
+                     Background="#2B0B98"
+                     Padding="6,6"
+                     HorizontalOptions="Center"
+                     >
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="11,11,11,11"/>
+                </Border.StrokeShape>
+                <Button x:Name="ImageCopyrightTextBox"
+                    BackgroundColor="Black"
                     BorderColor="#C49B33"
                     BorderWidth="3"
-                    HeightRequest="70"
+                    HeightRequest="42"
                     HorizontalOptions="Center"
                     Text="Copyright ©"
                     TextColor="White"
                     WidthRequest="240"                     
             />
+            </Border>
             <Border  Stroke="#C49B33"
                      StrokeThickness="3"
                      Background="#2B0B98"
@@ -102,14 +141,15 @@
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="30,30,30,30"/>
                 </Border.StrokeShape>
-                <Label x:Name="DescriptionLabel"  
+                <Label x:Name="DescriptionLabel"                       
                        Padding="33"
                        HorizontalOptions="Center"
                        Text="Some text here hopefully multiline 
                              text that we can keep going here for a
                              very long time as long as we can keep 
-                             thinking of all this bogus to write he 
-                             so that we can test this miltiline text!" 
+                             thinking of all this bogus to write here 
+                             so that we can test this miltiline text
+                             element in the hot reload interface!" 
                        HorizontalTextAlignment="Center"
                        >
                 </Label>
