@@ -1,17 +1,5 @@
 ﻿using Newtonsoft.Json.Linq;
 using System.Net.Http.Headers;
-using System;
-using System.Threading;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net.Http;
-using System.Runtime;
-using System.Runtime.Serialization;
-using System.Runtime.InteropServices;
-using System.Threading.Tasks;
-using System.Windows;
-using Microsoft.Maui.ApplicationModel;
 namespace AiPODMA;
 public partial class MainPage : ContentPage
 {
@@ -24,35 +12,25 @@ public partial class MainPage : ContentPage
         }
     }
     int count = 0;
-    // Settings name strings, used to preserve UI values between sessions.
-    const string SettingUpdateInstall = "1";
-    const string SettingSelectedDate = "2022, 06, 19";
     const string SettingDateToday = "date today";
     const string SettingShowOnStartup = "show on startup";
     const string SettingImageCountToday = "image count today";
     const string SettingLimitRange = "limit range";
+    // Declare a container for the local settings.
+    //ApplicationDataContainer localSettings;
     // The objective of the NASA API portal is to make NASA data, including imagery, eminently accessible to application developers. 
     const string EndpointURL = "https://api.nasa.gov/planetary/apod";
     // The objective of the NASA API portal is to make NASA data, including imagery, eminently accessible to application developers. 
     const string DesignerURL = "https://aicloudptyltd.business.site";
-    private const int imageDownloadLimit = 50;
+    // June 16, 1995  : the APOD launch date.
+    DateTime launchDate = new DateTime(1995, 6, 16);
     // A count of images downloaded today.
     private int imageCountToday;
     // Application settings status
-    private string imageAutoLoad = "Yes";
-    // Selected date
-    private static string selectedDate;
-    Object todayObject;
-    // Declare a container for the local settings.
-    //ApplicationDataContainer localSettings;
-    // June 16, 1995  : the APOD launch date.
-    DateTime launchDate = new DateTime(1995, 6, 16);
+    //private string imageAutoLoad = "Yes";
+    // To support the Timeline, we need to record user activity, and create an Adaptive Card.
     //UserActivitySession _currentActivity;
     //AdaptiveCard apodTimelineCard;
-    private static bool ImageLoaded = false;
-    private static bool UpdateInstalling = false;
-    private static bool UpdateInAMin = false;
-
     public MainPage()
     {
         InitializeComponent();
@@ -79,19 +57,32 @@ public partial class MainPage : ContentPage
     }
     private void AutoLoadImageCheckBox_OnChecked(object sender, EventArgs args)
     {
+        //AutoLoadImageCheckBox.IsChecked = true;
         // T.B.D.
     }
-    private void LimitRangeCheckBox_OnChecked(object sender, EventArgs args)
+    private void AutoLoadImageChecked_OnUnchacked(object sender, EventArgs args)
     {
-        if (DateLimiteCheckBox.IsChecked == true)
+        //AutoLoadImageCheckBox.IsChecked = false;
+        // T.B.D.
+    }
+    private void LimitRangeCheckBox_OnChecked(object sender, CheckedChangedEventArgs args)
+    {
+        //AutoLoadImageCheckBox.IsChecked = true;
+        if (DateLimitCheckeBox.IsChecked == true)
         {
             DateTime firstDayOfThisYear = new DateTime(DateTime.Today.Year, 1, 1);
-            DatePck.MinimumDate = firstDayOfThisYear;            
+            DatePck.MinimumDate = firstDayOfThisYear;
+
         }
         else
         {
             DatePck.MinimumDate = launchDate;
         }
+    }
+    private void LimitRangeCheckBox_OnUnchecked(object sender, CheckedChangedEventArgs arg)
+    {
+        //AutoLoadImageCheckBox.IsChecked = false;
+        // T.B.D.
     }
     private bool IsSupportedFormat(string photoUrl)
     {
@@ -186,11 +177,6 @@ public partial class MainPage : ContentPage
                 $"{response.StatusCode.ToString()} {response.ReasonPhrase}";
         }
         //SetupForTimelineAsync();
-    }
-
-    private void AutoLoadImageCheckBox_CheckedChanged(object sender, CheckedChangedEventArgs e)
-    {
-
     }
 }
 

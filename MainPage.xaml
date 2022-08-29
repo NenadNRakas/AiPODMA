@@ -4,63 +4,65 @@
              x:Class="AiPODMA.MainPage">
 
     <ScrollView>
-        <VerticalStackLayout
-            Spacing="10"
-            Padding="0,0"
-            VerticalOptions="Center"
-            >
-            <Image Source="dotnet_bot.png"
-                   SemanticProperties.Description="Cute dot net bot waving hi to you!"
+        <VerticalStackLayout x:Name="TopVerticalLayout"
+                             Padding="0,0"
+                             Spacing="10"
+                             VerticalOptions="Center"
+                             >
+            <Image x:Name="BotImage"
                    HeightRequest="200"
                    HorizontalOptions="Center"
+                   SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                   Source="dotnet_bot.png"
             />
-            <Label Text="A.i.POD"
+            <Label Text="A.i.POD!"
                    SemanticProperties.HeadingLevel="Level1"
                    FontSize="32"
                    HorizontalOptions="Center"
             />
-            <Label Text="Welcome to our .NET Multi-platform App"
-                   SemanticProperties.HeadingLevel="Level2"
-                   SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+            <Label x:Name="WelcomeLabel"
                    FontSize="18"
                    HorizontalOptions="Center"
+                   SemanticProperties.HeadingLevel="Level2"
+                   SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                   Text="Welcome to .NET Multi-platform App"
             />
-            <Border  Stroke="#C49B33"
-                     StrokeThickness="3"
+            <Border  x:Name="CounterBorder"
                      Background="#2B0B98"
-                     Padding="6,6"
                      HorizontalOptions="Center"
+                     Padding="6,6"
+                     Stroke="#C49B33"
+                     StrokeThickness="3"
                      >
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="11,0,0,11"/>
                 </Border.StrokeShape>
                 <Button x:Name="CounterBtn"
                         BackgroundColor="Black"
-                        CornerRadius="11"
                         Clicked="OnCounterClicked"
+                        CornerRadius="11"
                         HorizontalOptions="Center" 
-                        HeightRequest="42"
+                        HeightRequest="53"
+                        SemanticProperties.Hint="Counts the number of times you click"
                         Text="Load an image!"
                         TextColor="White"
-                        SemanticProperties.Hint="Counts the number of times you click"
                         WidthRequest="240"
                 />
             </Border>
-            <Border  Stroke="#C49B33"
-                     StrokeThickness="3"
+            <Border  x:Name="DateBorder"
                      Background="#2B0B98"
-                     Padding="6,6"
                      HorizontalOptions="Center"
+                     Padding="6,6"
+                     Stroke="#C49B33"
+                     StrokeThickness="3"
                      >
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="11,0,0,11"/>
                 </Border.StrokeShape>
-                <DatePicker x:Name="DatePck"                            
-                            BackgroundColor="Black"
+                <DatePicker x:Name="DatePck"
                             DateSelected="DatePck_DateChanged"
-                            HeightRequest="42"
+                            HeightRequest="53"
                             HorizontalOptions="Center"
-                            VerticalOptions="Center"
                             WidthRequest="240"
                 />
             </Border>
@@ -69,9 +71,9 @@
                                  >
                 <Label x:Name="AutoLoadLabel"
                        HorizontalTextAlignment="Center"
-                       Text="Auto load images:"                       
+                       Text="Auto Load Images:"
                        VerticalTextAlignment="Center"
-                       >                    
+                       >
                 </Label>
                 <CheckBox x:Name="AutoLoadImageCheckBox"
                           CheckedChanged="AutoLoadImageCheckBox_OnChecked"
@@ -82,86 +84,87 @@
                 <Label x:Name="LimitDate"
                        HorizontalTextAlignment="Center"
                        Text="Limit date to current year:"
-                       VerticalTextAlignment="Center"
-                       >                    
+                       VerticalOptions="Center"
+                       >
                 </Label>
-                <CheckBox x:Name="DateLimiteCheckBox"
+                <CheckBox x:Name="DateLimitCheckeBox"
                           CheckedChanged="LimitRangeCheckBox_OnChecked"
                           HeightRequest="33"
                           IsChecked="False"
-                          WidthRequest="33"                      
+                          WidthRequest="33"
                 />
             </VerticalStackLayout>
-            <Border  Stroke="#C49B33"
-                     StrokeThickness="3"
-                     Background="#2B0B98"
-                     Padding="6,6"
-                     HorizontalOptions="Center"
-                     >
+            <Border x:Name="DownloadsBorder"
+                    Background="#2B0B98"
+                    Padding="6,6"
+                    HorizontalOptions="Center"
+                    Stroke="#C49B33"
+                    StrokeThickness="3"
+                    >
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="11,11,11,11"/>
                 </Border.StrokeShape>
                 <Button x:Name="ImagesTodayTextBox"
-                        BackgroundColor="Black"
+                        BackgroundColor="#2B0B98"
                         BorderColor="#C49B33"
                         BorderWidth="3"
-                        HeightRequest="42"
+                        HeightRequest="53"
                         HorizontalOptions="Center"
                         Text="Todays image Downloads"
                         TextColor="White"
                         WidthRequest="240"
-            />
+                />
             </Border>
-            <Border  Stroke="#C49B33"
-                     StrokeThickness="3"
-                     Background="#2B0B98"
-                     Padding="6,6"
-                     HorizontalOptions="Center"
-                     >
+            <Border x:Name="CopyrightBorder"
+                    Background="#2B0B98"
+                    HorizontalOptions="Center"
+                    Padding="6,6"
+                    Stroke="#C49B33"
+                    StrokeThickness="3">
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="11,11,11,11"/>
                 </Border.StrokeShape>
                 <Button x:Name="ImageCopyrightTextBox"
-                    BackgroundColor="Black"
-                    BorderColor="#C49B33"
-                    BorderWidth="3"
-                    HeightRequest="42"
-                    HorizontalOptions="Center"
-                    Text="Copyright ©"
-                    TextColor="White"
-                    WidthRequest="240"                     
-            />
+                        BackgroundColor="#2B0B98"
+                        BorderColor="#C49B33"
+                        BorderWidth="3"
+                        HeightRequest="53"
+                        HorizontalOptions="Center"
+                        Text="Copyright ©"
+                        TextColor="White"
+                        WidthRequest="240"                     
+                />
             </Border>
-            <Border  Stroke="#C49B33"
-                     StrokeThickness="3"
+            <Border  x:Name="DescriptionBorder"
                      Background="#2B0B98"
                      Padding="16,8"
                      HorizontalOptions="Center"
+                     Stroke="#C49B33"
+                     StrokeThickness="3"
                      >
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="30,30,30,30"/>
                 </Border.StrokeShape>
-                <Label x:Name="DescriptionLabel"                       
-                       Padding="33"
+                <Label x:Name="DescriptionLabel"  
                        HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       Padding="33"
                        Text="Some text here hopefully multiline 
                              text that we can keep going here for a
                              very long time as long as we can keep 
-                             thinking of all this bogus to write here 
-                             so that we can test this miltiline text
-                             element in the hot reload interface!" 
-                       HorizontalTextAlignment="Center"
+                             thinking of all this bogus to write he 
+                             so that we can test this miltiline text!" 
                        >
                 </Label>
             </Border>
             <Image x:Name="ImagePictureBox"
-                   BackgroundColor="Black"
-                   HeightRequest="930"
-                   HorizontalOptions="Fill"
-                   IsVisible="false"
-                   Margin="10,0,10,0"
-                   WidthRequest="930"
-                   />
+                  BackgroundColor="Black"
+                  HeightRequest="930"
+                  HorizontalOptions="Fill"
+                  IsVisible="false"
+                  Margin="10,0,10,0"
+                  WidthRequest="930"
+           />
             <WebView x:Name="WebView1"
                      BackgroundColor="Black"
                      HeightRequest="930"
@@ -169,14 +172,14 @@
                      IsVisible="false"
                      Margin="10,0,10,0"
                      WidthRequest="930"
-                     />
+            />
             <Image x:Name="ImageIcon"
                    BackgroundColor="Black"
                    HeightRequest="133"
                    IsVisible="true"
                    Source="largetile.png"
                    WidthRequest="133"
-                   />
+            />
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
