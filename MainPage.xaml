@@ -27,28 +27,6 @@
                    SemanticProperties.Description="Welcome to dot net Multi platform App U I"
                    Text="Welcome to .NET Multi-platform App"
             />
-            <Border  x:Name="CounterBorder"
-                     Background="#2B0B98"
-                     HorizontalOptions="Center"
-                     Padding="6,6"
-                     Stroke="#C49B33"
-                     StrokeThickness="3"
-                     >
-                <Border.StrokeShape>
-                    <RoundRectangle CornerRadius="11,0,0,11"/>
-                </Border.StrokeShape>
-                <Button x:Name="CounterBtn"
-                        BackgroundColor="Black"
-                        Clicked="OnCounterClicked"
-                        CornerRadius="11"
-                        HorizontalOptions="Center" 
-                        HeightRequest="53"
-                        SemanticProperties.Hint="Counts the number of times you click"
-                        Text="Load an image!"
-                        TextColor="White"
-                        WidthRequest="240"
-                />
-            </Border>
             <Border x:Name="LaunchBorder"
                     Background="#2B0B98"
                     HorizontalOptions="Center"

@@ -39,17 +39,6 @@ public partial class MainPage : ContentPage
             _ = LoadPhoto();
         }
     }
-    private void OnCounterClicked(object sender, EventArgs e)
-    {
-        count++;
-
-        if (count == 1)
-            CounterBtn.Text = $"Loaded {count} image!";
-        else
-            CounterBtn.Text = $"Loaded {count} images!";
-
-        SemanticScreenReader.Announce(CounterBtn.Text);
-    }
     private void OnLaunchClicked(object sender, EventArgs e)
     {
         // Return thee full date range
