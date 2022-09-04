@@ -11,7 +11,6 @@ public partial class MainPage : ContentPage
             this.photoURI = photoURI;
         }
     }
-    int count = 0;
     const string SettingDateToday = "date today";
     const string SettingShowOnStartup = "show on startup";
     const string SettingImageCountToday = "image count today";
