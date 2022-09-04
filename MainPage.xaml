@@ -49,6 +49,26 @@
                         WidthRequest="240"
                 />
             </Border>
+            <Border x:Name="LaunchBorder"
+                    Background="#2B0B98"
+                    HorizontalOptions="Center"
+                    Padding="6,6"
+                    Stroke="#C49B33"
+                    StrokeThickness="3">
+               <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="11,0,0,11"/>
+               </Border.StrokeShape>
+               <Button x:Name="LaunchBtn"
+                       BackgroundColor="Black"
+                       Clicked="OnLaunchClicked"
+                       HorizontalOptions="Center"
+                       HeightRequest="53"
+                       SemanticProperties.Hint="Takes you back to the project launch"
+                       Text="Launch Date"
+                       TextColor="White"
+                       WidthRequest="240"
+               />
+            </Border>
             <Border  x:Name="DateBorder"
                      Background="#2B0B98"
                      HorizontalOptions="Center"

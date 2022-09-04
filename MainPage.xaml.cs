@@ -50,6 +50,13 @@ public partial class MainPage : ContentPage
 
         SemanticScreenReader.Announce(CounterBtn.Text);
     }
+    private void OnLaunchClicked(object sender, EventArgs e)
+    {
+        // Return thee full date range
+        DateLimitCheckeBox.IsChecked = false;
+        //Set the date to the begining
+        DatePck.Date = launchDate;
+    }
     private void DatePck_DateChanged(object sender, EventArgs e)
     {
         _ = LoadPhoto();
