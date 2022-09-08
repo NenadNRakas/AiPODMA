@@ -38,10 +38,12 @@
                </Border.StrokeShape>
                <Button x:Name="LaunchBtn"
                        BackgroundColor="Black"
+                       BorderColor="#C49B33"
+                       BorderWidth="3"
                        Clicked="OnLaunchClicked"
                        HorizontalOptions="Center"
                        HeightRequest="53"
-                       SemanticProperties.Hint="Takes you back to the project launch"
+                       SemanticProperties.Hint="Takes you back to the project launch."
                        Text="Launch Date"
                        TextColor="White"
                        WidthRequest="240"
