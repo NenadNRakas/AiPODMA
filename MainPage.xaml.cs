@@ -11,7 +11,6 @@ public partial class MainPage : ContentPage
             this.photoURI = photoURI;
         }
     }
-    int count = 0;
     const string SettingDateToday = "date today";
     const string SettingShowOnStartup = "show on startup";
     const string SettingImageCountToday = "image count today";
@@ -26,6 +25,7 @@ public partial class MainPage : ContentPage
     DateTime launchDate = new DateTime(1995, 6, 16);
     // A count of images downloaded today.
     private int imageCountToday;
+    private int count = 0;
     // Application settings status
     //private string imageAutoLoad = "Yes";
     // To support the Timeline, we need to record user activity, and create an Adaptive Card.
@@ -34,11 +34,16 @@ public partial class MainPage : ContentPage
     public MainPage()
     {
         InitializeComponent();
+        if (Environment.OSVersion.Version.Major >= 10)
+        {
+            FeedBackButton.IsVisible = true;
+        }
         if (AutoLoadImageCheckBox.IsChecked == true)
         {
             _ = LoadPhoto();
         }
     }
+
     private void OnCounterClicked(object sender, EventArgs e)
     {
         count++;
@@ -89,6 +94,10 @@ public partial class MainPage : ContentPage
     private void LimitRangeCheckBox_OnUnchecked(object sender, CheckedChangedEventArgs arg)
     {
         //AutoLoadImageCheckBox.IsChecked = false;
+        // T.B.D.
+    }
+    private void FeedBackButton_Clicked(object sender, EventArgs args)
+    {
         // T.B.D.
     }
     private bool IsSupportedFormat(string photoUrl)
