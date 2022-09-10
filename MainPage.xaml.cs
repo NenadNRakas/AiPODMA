@@ -108,7 +108,7 @@ public partial class MainPage : ContentPage
         // Extract the extension, force to lower case and compare
         string ext = Path.GetExtension(photoUrl).ToLower();
         // Check the UWP formats
-        return (ext == ".jpg" || ext == "jpeg" || ext == ".png" || ext == ".svg" ||
+        return (ext == ".jpg" || ext == ".jpeg" || ext == ".png" || ext == ".svg" ||
                 ext == ".bmp" || ext == ".tif" || ext == ".ico" || ext == ".gif");
     }
     private async Task LoadPhoto()
