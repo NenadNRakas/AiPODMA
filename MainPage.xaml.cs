@@ -33,6 +33,10 @@ public partial class MainPage : ContentPage
     public MainPage()
     {
         InitializeComponent();
+        if (Environment.OSVersion.Version.Major >= 10)
+        {
+            FeedBackButton.IsVisible = true;
+        }
         if (AutoLoadImageCheckBox.IsChecked == true)
         {
             _ = LoadPhoto();
@@ -77,6 +81,10 @@ public partial class MainPage : ContentPage
     private void LimitRangeCheckBox_OnUnchecked(object sender, CheckedChangedEventArgs arg)
     {
         //AutoLoadImageCheckBox.IsChecked = false;
+        // T.B.D.
+    }
+    private void FeedBackButton_Clicked(object sender, EventArgs args)
+    {
         // T.B.D.
     }
     private bool IsSupportedFormat(string photoUrl)

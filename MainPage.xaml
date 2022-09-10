@@ -164,7 +164,7 @@
                   IsVisible="false"
                   Margin="10,0,10,0"
                   WidthRequest="930"
-           />
+            />
             <WebView x:Name="WebView1"
                      BackgroundColor="Black"
                      HeightRequest="930"
@@ -180,6 +180,32 @@
                    Source="largetile.png"
                    WidthRequest="133"
             />
+            <Border x:Name="FeedBackBorder"
+                    BackgroundColor="#2B0B98"
+                    HorizontalOptions="Center"
+                    Padding="6,6"
+                    Stroke="#C49B33"
+                    StrokeThickness="3"
+                    >
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="11,0,0,11"/>
+                </Border.StrokeShape>
+                <Button x:Name="FeedBackButton"
+                        BackgroundColor="Black"
+                        BorderColor="#C49B33"
+                        BorderWidth="3"
+                        Clicked="FeedBackButton_Clicked"
+                        FontFamily="Segoe MDL2 Assets"
+                        HeightRequest="53"
+                        HorizontalOptions="Center"
+                        IsVisible="false"
+                        SemanticProperties.Hint="You can send us your thoughts."
+                        Text="Feedback Hub"
+                        TextColor="White"
+                        VerticalOptions="Center"
+                        WidthRequest="240"
+                />
+            </Border>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
