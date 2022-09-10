@@ -34,7 +34,7 @@ public partial class MainPage : ContentPage
     public MainPage()
     {
         InitializeComponent();
-        if (Environment.OSVersion.Version.Major >= 10)
+        if (Environment.OSVersion.Version.Major >= 10 && Environment.OSVersion.Version.Minor >= 0 && Environment.OSVersion.Version.Build >= 19041)
         {
             FeedBackButton.IsVisible = true;
         }
@@ -99,6 +99,8 @@ public partial class MainPage : ContentPage
     private void FeedBackButton_Clicked(object sender, EventArgs args)
     {
         // T.B.D.
+        /*var launcher = Microsoft.Services.Store.Engagement.StoreServicesFeedbackLauncher.GetDefault();
+        await launcher.LaunchAsync();*/
     }
     private bool IsSupportedFormat(string photoUrl)
     {
