@@ -2,7 +2,6 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AiPODMA.MainPage">
-
     <ScrollView>
         <VerticalStackLayout x:Name="TopVerticalLayout"
                              Padding="0,0"
@@ -55,15 +54,17 @@
                     Padding="6,6"
                     Stroke="#C49B33"
                     StrokeThickness="3">
-               <Border.StrokeShape>
+                <Border.StrokeShape>
                     <RoundRectangle CornerRadius="11,0,0,11"/>
-               </Border.StrokeShape>
-               <Button x:Name="LaunchBtn"
+                </Border.StrokeShape>
+                <Button x:Name="LaunchBtn"
                        BackgroundColor="Black"
+                       BorderColor="#C49B33"
+                       BorderWidth="3"
                        Clicked="OnLaunchClicked"
                        HorizontalOptions="Center"
                        HeightRequest="53"
-                       SemanticProperties.Hint="Takes you back to the project launch"
+                       SemanticProperties.Hint="Takes you back to the project launch."
                        Text="Launch Date"
                        TextColor="White"
                        WidthRequest="240"
@@ -184,7 +185,7 @@
                   IsVisible="false"
                   Margin="10,0,10,0"
                   WidthRequest="930"
-           />
+            />
             <WebView x:Name="WebView1"
                      BackgroundColor="Black"
                      HeightRequest="930"
@@ -200,6 +201,32 @@
                    Source="largetile.png"
                    WidthRequest="133"
             />
+            <Border x:Name="FeedBackBorder"
+                    BackgroundColor="#2B0B98"
+                    HorizontalOptions="Center"
+                    Padding="6,6"
+                    Stroke="#C49B33"
+                    StrokeThickness="3"
+                    >
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="11,0,0,11"/>
+                </Border.StrokeShape>
+                <Button x:Name="FeedBackButton"
+                        BackgroundColor="Black"
+                        BorderColor="#C49B33"
+                        BorderWidth="3"
+                        Clicked="FeedBackButton_Clicked"
+                        FontFamily="Segoe MDL2 Assets"
+                        HeightRequest="53"
+                        HorizontalOptions="Center"
+                        IsVisible="false"
+                        SemanticProperties.Hint="You can send us your thoughts."
+                        Text="Feedback Hub"
+                        TextColor="White"
+                        VerticalOptions="Center"
+                        WidthRequest="240"
+                />
+            </Border>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
