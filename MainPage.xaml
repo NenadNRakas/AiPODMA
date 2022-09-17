@@ -1,8 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<ContentPage x:Name="MainContent"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AiPODMA.MainPage">
-    <ScrollView>
+             x:Class="AiPODMA.MainPage"
+             BackgroundColor="Black">
+    <ScrollView x:Name="ContentScrollView"
+                >
         <VerticalStackLayout x:Name="TopVerticalLayout"
                              Padding="0,0"
                              Spacing="10"
@@ -14,17 +17,20 @@
                    SemanticProperties.Description="Cute dot net bot waving hi to you!"
                    Source="dotnet_bot.png"
             />
-            <Label Text="A.i.POD!"
+            <Label x:Name="TitleLabel"
                    SemanticProperties.HeadingLevel="Level1"
                    FontSize="32"
                    HorizontalOptions="Center"
+                   Text="A.i.POD!"
+                   TextColor="White"
             />
-            <Label x:Name="WelcomeLabel"
+            <Label x:Name="WelcomeLabel"                   
                    FontSize="18"
                    HorizontalOptions="Center"
                    SemanticProperties.HeadingLevel="Level2"
                    SemanticProperties.Description="Welcome to dot net Multi platform App U I"
                    Text="Welcome to .NET Multi-platform App"
+                   TextColor="White"
             />
             <Border  x:Name="CounterBorder"
                      Background="#2B0B98"
@@ -83,7 +89,7 @@
                 <DatePicker x:Name="DatePck"
                             DateSelected="DatePck_DateChanged"
                             HeightRequest="53"
-                            HorizontalOptions="Center"
+                            HorizontalOptions="Center" TextColor="White"
                             WidthRequest="240"
                 />
             </Border>
@@ -93,6 +99,7 @@
                 <Label x:Name="AutoLoadLabel"
                        HorizontalTextAlignment="Center"
                        Text="Auto Load Images:"
+                       TextColor="White"
                        VerticalTextAlignment="Center"
                        >
                 </Label>
@@ -105,6 +112,7 @@
                 <Label x:Name="LimitDate"
                        HorizontalTextAlignment="Center"
                        Text="Limit date to current year:"
+                       TextColor="White"
                        VerticalOptions="Center"
                        >
                 </Label>
@@ -175,7 +183,9 @@
                              very long time as long as we can keep 
                              thinking of all this bogus to write he 
                              so that we can test this miltiline text!" 
+                       TextColor="White"
                        >
+                       
                 </Label>
             </Border>
             <Image x:Name="ImagePictureBox"
