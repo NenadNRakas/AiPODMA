@@ -21,7 +21,7 @@
                    SemanticProperties.HeadingLevel="Level1"
                    FontSize="32"
                    HorizontalOptions="Center"
-                   Text="A.i.POD!"
+                   Text="Welcome!"
                    TextColor="White"
             />
             <Label x:Name="WelcomeLabel"                   
@@ -29,7 +29,7 @@
                    HorizontalOptions="Center"
                    SemanticProperties.HeadingLevel="Level2"
                    SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                   Text="Welcome to .NET Multi-platform App"
+                   Text="This is our new multi-platform APOD"
                    TextColor="White"
             />
             <Border  x:Name="CounterBorder"
