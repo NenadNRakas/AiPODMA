@@ -233,7 +233,7 @@
                         HorizontalOptions="Center"
                         IsVisible="false"
                         SemanticProperties.Hint="You can send us your thoughts."
-                        Text="Feedback Hub"
+                        Text="Feedback Hub?"
                         TextColor="White"
                         VerticalOptions="Center"
                         WidthRequest="240"
