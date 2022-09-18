@@ -146,9 +146,10 @@ public partial class MainPage : ContentPage
                 description = (string)jResult["explanation"];
                 copyright = (string)jResult["copyright"];
                 // Set the variable
-                ImagePictureBox.Source = photoURI;
                 if (IsSupportedFormat(photoUrl))
                 {
+                    //ImagePictureBox.Source = (new Uri(photoUrl, UriKind.Absolute));  //photoURI;
+                    WebView1.Source = (new Uri(photoUrl, UriKind.Absolute));
                     // Get the copyright message, but fill with "NASA" if no name is provided.
                     //copyright = (string)jResult["copyright"];
                     if (copyright != null && copyright.Length > 0)
@@ -160,7 +161,7 @@ public partial class MainPage : ContentPage
                     // Switch the visibility back
                     await Task.Delay(TimeSpan.FromSeconds(3.3f));
                     WebView1.IsVisible = false;
-                    ImagePictureBox.IsVisible = true;
+                    ImagePictureBox.IsVisible = false;
                 }
                 else
                 {

@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage x:Name="MainContent"
+<ContentPage x:Name="MainContentPage"
              xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AiPODMA.MainPage"
              BackgroundColor="Black">
     <ScrollView x:Name="ContentScrollView"
-                >
+                BackgroundColor="Black">
         <VerticalStackLayout x:Name="TopVerticalLayout"
                              Padding="0,0"
                              Spacing="10"
                              VerticalOptions="Center"
-                             >
+                             BackgroundColor="Black">
             <Image x:Name="BotImage"
                    HeightRequest="200"
                    HorizontalOptions="Center"
@@ -189,12 +189,12 @@
                 </Label>
             </Border>
             <Image x:Name="ImagePictureBox"
-                  BackgroundColor="Black"
-                  HeightRequest="930"
-                  HorizontalOptions="Fill"
-                  IsVisible="false"
-                  Margin="10,0,10,0"
-                  WidthRequest="930"
+                   BackgroundColor="Black"
+                   HeightRequest="930"
+                   HorizontalOptions="Fill"
+                   IsVisible="false"
+                   Margin="10,0,10,0"
+                   WidthRequest="930"
             />
             <WebView x:Name="WebView1"
                      BackgroundColor="Black"
