@@ -203,6 +203,8 @@
                      IsVisible="false"
                      Margin="10,0,10,0"
                      WidthRequest="930"
+                     ScaleX="0.39"
+                     ScaleY="0.39"
             />
             <Image x:Name="ImageIcon"
                    BackgroundColor="Black"

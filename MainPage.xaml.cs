@@ -160,7 +160,7 @@ public partial class MainPage : ContentPage
                     DescriptionLabel.Text = description;
                     // Switch the visibility back
                     await Task.Delay(TimeSpan.FromSeconds(3.3f));
-                    WebView1.IsVisible = false;
+                    WebView1.IsVisible = true;
                     ImagePictureBox.IsVisible = false;
                 }
                 else
