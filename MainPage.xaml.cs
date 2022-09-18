@@ -38,7 +38,11 @@ public partial class MainPage : ContentPage
         {
             FeedBackButton.IsVisible = true;
         }
-        else { FeedBackButton.IsVisible = true; FeedBackButton.Text = "[@.i.]™"; }
+        else 
+        { 
+            FeedBackButton.IsVisible = true; 
+            FeedBackButton.Text = "[@.i.]™"; 
+        }
         if (AutoLoadImageCheckBox.IsChecked == true)
         {
             _ = LoadPhoto();
