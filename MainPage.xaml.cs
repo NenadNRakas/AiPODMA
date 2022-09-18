@@ -37,7 +37,7 @@ public partial class MainPage : ContentPage
         if (Environment.OSVersion.Version.Major >= 10 && Environment.OSVersion.Version.Minor >= 0 && Environment.OSVersion.Version.Build >= 19041)
         {
             FeedBackButton.IsVisible = true;
-            FeedBackButton.Text = "Feedback Hub?";
+            FeedBackButton.Text = "Feedback?";
         }
         else 
         { 
