@@ -42,14 +42,13 @@ public partial class MainPage : ContentPage
         else 
         { 
             FeedBackButton.IsVisible = true; 
-            FeedBackButton.Text = "[@.i.]™"; 
+            FeedBackButton.Text = "by [@.i.]™"; 
         }
         if (AutoLoadImageCheckBox.IsChecked == true)
         {
             _ = LoadPhoto();
         }
     }
-
     private void OnCounterClicked(object sender, EventArgs e)
     {
         count++;
