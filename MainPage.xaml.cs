@@ -101,11 +101,28 @@ public partial class MainPage : ContentPage
         //AutoLoadImageCheckBox.IsChecked = false;
         // T.B.D.
     }
-    private void FeedBackButton_Clicked(object sender, EventArgs args)
+    private async void FeedBackButton_Clicked(object sender, EventArgs args)
     {
         // T.B.D.
         /*var launcher = Microsoft.Services.Store.Engagement.StoreServicesFeedbackLauncher.GetDefault();
         await launcher.LaunchAsync();*/
+        if (Email.Default.IsComposeSupported)
+        {
+            string subject = "A.i.POD Feedback";
+            string body = "This is our new multi-platform APOD application upgrade non Microsoft feedback option. I've " +
+                          "attached a photo of our adventures together.";
+            string[] recipients = new[] { "info@aicloudptyltd.com", "NenadRakas@outlook.com" };
+            var message = new EmailMessage
+            {
+                Subject = subject,
+                Body = body,
+                BodyFormat = EmailBodyFormat.PlainText,
+                To = new List<string>(recipients)
+            };
+            string picturePath = Path.Combine(FileSystem.CacheDirectory, "memories.jpg");
+            message.Attachments.Add(new EmailAttachment(picturePath));
+            await Email.Default.ComposeAsync(message);
+        }
     }
     private bool IsSupportedFormat(string photoUrl)
     {
