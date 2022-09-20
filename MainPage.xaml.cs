@@ -48,6 +48,14 @@ public partial class MainPage : ContentPage
         {
             _ = LoadPhoto();
         }
+        // 10 minute animation
+        uint duration = 10 * 60 * 1000;
+        Task.WhenAll
+        (
+          BotImage.RotateTo(307 * 360, duration),
+          BotImage.RotateXTo(251 * 360, duration),
+          BotImage.RotateYTo(199 * 360, duration)
+        );
     }
     private void OnCounterClicked(object sender, EventArgs e)
     {
