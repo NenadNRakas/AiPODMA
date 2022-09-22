@@ -57,7 +57,12 @@ public partial class MainPage : ContentPage
           BotImage.RotateYTo(199 * 360, duration)
         );
     }
-    private void OnCounterClicked(object sender, EventArgs e)
+    private void OnContentReload(object sender, EventArgs args)
+    {
+        WebView1.WidthRequest = ContentScrollView.Width;
+        WebView1.HeightRequest = ContentScrollView.Height;
+    }
+        private void OnCounterClicked(object sender, EventArgs e)
     {
         count++;
 
@@ -78,6 +83,7 @@ public partial class MainPage : ContentPage
     private void DatePck_DateChanged(object sender, EventArgs e)
     {
         _ = LoadPhoto();
+        //OnContentReload(sender, e);
         //ImagePictureBox.IsVisible = true;
     }
     private void AutoLoadImageCheckBox_OnChecked(object sender, EventArgs args)
@@ -226,6 +232,8 @@ public partial class MainPage : ContentPage
                 $"{response.StatusCode.ToString()} {response.ReasonPhrase}";
         }
         //SetupForTimelineAsync();
+        WebView1.WidthRequest = ContentScrollView.WidthRequest;
+        //WebView1.HeightRequest = ContentScrollView.HeightRequest;
     }
 }
 
