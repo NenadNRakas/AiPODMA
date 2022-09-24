@@ -5,11 +5,12 @@
              x:Class="AiPODMA.MainPage"
              BackgroundColor="Black"> 
     <ScrollView x:Name="ContentScrollView"
-                BackgroundColor="Black">
+                BackgroundColor="Black"
+                VerticalOptions="CenterAndExpand">
         <VerticalStackLayout x:Name="TopVerticalLayout"
                              Padding="0,0"
                              Spacing="10"
-                             VerticalOptions="Center"
+                             VerticalOptions="CenterAndExpand"
                              BackgroundColor="Black">
             <Image x:Name="BotImage"
                    HeightRequest="200"

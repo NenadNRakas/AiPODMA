@@ -198,7 +198,9 @@ public partial class MainPage : ContentPage
                     // Switch the visibility back
                     await Task.Delay(TimeSpan.FromSeconds(3.3f));
                     WebView1.IsVisible = true;
-                    ImagePictureBox.IsVisible = false;
+                    ImagePictureBox.IsVisible = false;                    
+                    WebView1.HeightRequest = 1234;
+                    WebView1.WidthRequest = TopVerticalLayout.WidthRequest;
                 }
                 else
                 {
@@ -209,6 +211,8 @@ public partial class MainPage : ContentPage
                     await Task.Delay(TimeSpan.FromSeconds(3.3f));
                     ImagePictureBox.IsVisible = false;
                     WebView1.IsVisible = true;
+                    WebView1.HeightRequest = 1234;
+                    WebView1.WidthRequest = TopVerticalLayout.WidthRequest;
                 }
             }
             catch (Exception ex)
