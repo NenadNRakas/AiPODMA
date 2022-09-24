@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Microsoft.Maui.Controls;
+using Newtonsoft.Json.Linq;
 using System.Net.Http.Headers;
 namespace AiPODMA;
 public partial class MainPage : ContentPage
@@ -201,7 +202,7 @@ public partial class MainPage : ContentPage
                 }
                 else
                 {
-                    WebView1.Source = (new Uri(photoUrl, UriKind.Absolute));
+                    WebView1.Source = new Uri(photoUrl, UriKind.Absolute);
                     //WebView1.Navigate(new Uri(photoUrl));
                     ImageCopyrightTextBox.Text = "© " + copyright;
                     DescriptionLabel.Text = description + $"Url is: {photoUrl}";
@@ -232,8 +233,6 @@ public partial class MainPage : ContentPage
                 $"{response.StatusCode.ToString()} {response.ReasonPhrase}";
         }
         //SetupForTimelineAsync();
-        WebView1.WidthRequest = ContentScrollView.WidthRequest;
-        //WebView1.HeightRequest = ContentScrollView.HeightRequest;
     }
 }
 

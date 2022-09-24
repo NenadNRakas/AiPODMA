@@ -185,28 +185,19 @@
                              so that we can test this miltiline text!" 
                        TextColor="White"
                        >
-                       
+
                 </Label>
             </Border>
             <Image x:Name="ImagePictureBox"
-                   BackgroundColor="Black"
-                   HeightRequest="930"
-                   HorizontalOptions="Fill"
-                   IsVisible="false"
-                   Margin="10,0,10,0"
-                   WidthRequest="930"
-            />
+                       BackgroundColor="Black"
+                       IsVisible="false"
+                       Margin="10,0,10,0"
+                />
             <WebView x:Name="WebView1"
                      BackgroundColor="Black"
-                     HeightRequest="930"
-                     HorizontalOptions="Center"
                      IsVisible="false"
-                     Margin="10,0,10,0"
-                     ScaleX="1"
-                     ScaleY="1"
-                     VerticalOptions="Center"
-                     WidthRequest="930"
-            />
+                     Margin="10,0,10,0"                     
+                />
             <Image x:Name="ImageIcon"
                    BackgroundColor="Black"
                    HeightRequest="133"
