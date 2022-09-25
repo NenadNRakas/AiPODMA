@@ -1,4 +1,4 @@
-﻿using Microsoft.Maui.Controls;
+﻿//using Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;
 using Newtonsoft.Json.Linq;
 using System.Net.Http.Headers;
 namespace AiPODMA;
@@ -57,6 +57,8 @@ public partial class MainPage : ContentPage
           BotImage.RotateXTo(251 * 360, duration),
           BotImage.RotateYTo(199 * 360, duration)
         );
+        //WebView1.On<Microsoft.Maui.Controls.PlatformConfiguration.Android>().EnableZoomControls(true);
+        //WebView1.On<Microsoft.Maui.Controls.PlatformConfiguration.Android>().DisplayZoomControls(true);
     }
     private void OnContentReload(object sender, EventArgs args)
     {
@@ -199,7 +201,7 @@ public partial class MainPage : ContentPage
                     await Task.Delay(TimeSpan.FromSeconds(3.3f));
                     WebView1.IsVisible = true;
                     ImagePictureBox.IsVisible = false;                    
-                    WebView1.HeightRequest = 1234;
+                    WebView1.HeightRequest = 2234;
                     WebView1.WidthRequest = TopVerticalLayout.WidthRequest;
                 }
                 else
@@ -211,7 +213,7 @@ public partial class MainPage : ContentPage
                     await Task.Delay(TimeSpan.FromSeconds(3.3f));
                     ImagePictureBox.IsVisible = false;
                     WebView1.IsVisible = true;
-                    WebView1.HeightRequest = 1234;
+                    WebView1.HeightRequest = 2234;
                     WebView1.WidthRequest = TopVerticalLayout.WidthRequest;
                 }
             }
