@@ -198,6 +198,7 @@
             <WebView x:Name="WebView1"
                      android:WebView.EnableZoomControls="True"
                      android:WebView.DisplayZoomControls="True"
+                     android:WebView.MixedContentMode="CompatibilityMode"
                      BackgroundColor="Black"
                      IsVisible="false"
                      Margin="10,0,10,0"                     

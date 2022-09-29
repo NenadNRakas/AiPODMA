@@ -1,4 +1,4 @@
-﻿//using Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;
+﻿using Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;
 using Newtonsoft.Json.Linq;
 using System.Net.Http.Headers;
 namespace AiPODMA;
@@ -57,6 +57,7 @@ public partial class MainPage : ContentPage
           BotImage.RotateXTo(251 * 360, duration),
           BotImage.RotateYTo(199 * 360, duration)
         );
+        WebView1.On<Microsoft.Maui.Controls.PlatformConfiguration.Android>().SetMixedContentMode(MixedContentHandling.CompatibilityMode);
         //WebView1.On<Microsoft.Maui.Controls.PlatformConfiguration.Android>().EnableZoomControls(true);
         //WebView1.On<Microsoft.Maui.Controls.PlatformConfiguration.Android>().DisplayZoomControls(true);
     }
