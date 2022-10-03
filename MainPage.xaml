@@ -198,10 +198,10 @@
             <WebView x:Name="WebView1"
                      android:WebView.EnableZoomControls="True"
                      android:WebView.DisplayZoomControls="True"
-                     android:WebView.MixedContentMode="CompatibilityMode"
+                     android:WebView.MixedContentMode="AlwaysAllow"
                      BackgroundColor="Black"
                      IsVisible="false"
-                     Margin="10,0,10,0"                     
+                     Margin="10,0,10,0"
                 />
             <Image x:Name="ImageIcon"
                    BackgroundColor="Black"
@@ -236,6 +236,7 @@
                         WidthRequest="240"
                 />
             </Border>
+            <WebView Source="https://www.youtube.com/channel/UC9itUVqL4GBvLl6M-07MxRA" Loaded="WebView_Loaded" />
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

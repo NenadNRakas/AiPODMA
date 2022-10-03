@@ -57,7 +57,7 @@ public partial class MainPage : ContentPage
           BotImage.RotateXTo(251 * 360, duration),
           BotImage.RotateYTo(199 * 360, duration)
         );
-        WebView1.On<Microsoft.Maui.Controls.PlatformConfiguration.Android>().SetMixedContentMode(MixedContentHandling.CompatibilityMode);
+        WebView1.On<Microsoft.Maui.Controls.PlatformConfiguration.Android>().SetMixedContentMode(MixedContentHandling.AlwaysAllow);
         //WebView1.On<Microsoft.Maui.Controls.PlatformConfiguration.Android>().EnableZoomControls(true);
         //WebView1.On<Microsoft.Maui.Controls.PlatformConfiguration.Android>().DisplayZoomControls(true);
     }
@@ -240,6 +240,22 @@ public partial class MainPage : ContentPage
                 $"{response.StatusCode.ToString()} {response.ReasonPhrase}";
         }
         //SetupForTimelineAsync();
+    }
+    private void WebView_Loaded(object sender, EventArgs e)
+    {
+#if ANDROID
+        sender = sender as Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific.WebView;
+        var view = sender;
+        var handler = view;
+        var webview = handler as Android.Webkit.WebView;
+        if (webview is not null)
+        {
+            webview.LayoutParameters = new(
+                Android.Views.ViewGroup.LayoutParams.MatchParent,
+                Android.Views.ViewGroup.LayoutParams.MatchParent);
+
+        }
+        #endif
     }
 }
 
