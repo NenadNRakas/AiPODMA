@@ -250,10 +250,11 @@ public partial class MainPage : ContentPage
         var webview = handler as Android.Webkit.WebView;
         if (webview is not null)
         {
+            //webview.SetLayerType(Android.Views.LayerType.Software, null);
             webview.LayoutParameters = new(
                 Android.Views.ViewGroup.LayoutParams.MatchParent,
                 Android.Views.ViewGroup.LayoutParams.MatchParent);
-
+            
         }
         #endif
     }
